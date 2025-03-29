@@ -8,7 +8,14 @@ const App = () => {
 
   return (
     <div>
-      code here
+      <h1>Give feedback</h1>
+      <button>Good</button>
+      <button>Neutral</button>
+      <button>Bad</button>
+      <h2>statistics</h2>
+      <p>Good:</p>
+      <p>Neutral:</p>
+      <p>Bad:</p>
     </div>
   )
 }
