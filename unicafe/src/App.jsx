@@ -30,6 +30,9 @@ const App = () => {
     const newAll = all + 1
     setAll(newAll)
 
+    const newAverage = (good - bad) / newAll
+    setAverage(newAverage)
+
     const newPositive = good / newAll * 100
     setPositive(newPositive)
   }
