@@ -6,20 +6,36 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
   const [all, setAll] = useState(0)
+  const [average, setAverage] = useState(0)
 
   const handleGood = () => {
-    setGood(good + 1)
-    setAll(all + 1)
+    const newGood = good + 1
+    setGood(newGood)
+
+    const newAll = all + 1
+    setAll(newAll)
+
+    const newAverage = (newGood - bad) / newAll
+    setAverage(newAverage)
   }
 
   const handleNeutral = () => {
-    setNeutral(neutral + 1)
-    setAll(all + 1)
+    const newNeutral = neutral + 1
+    setNeutral(newNeutral)
+
+    const newAll = all + 1
+    setAll(newAll)
   }
 
   const handleBad = () => {
-    setBad(bad + 1)
-    setAll(all + 1)
+    const newBad = bad + 1
+    setBad(newBad)
+
+    const newAll = all + 1
+    setAll(newAll)
+
+    const newAverage = (good - newBad) / newAll
+    setAverage(newAverage)
   }
 
   return (
@@ -33,6 +49,7 @@ const App = () => {
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
       <p>All: {all}</p>
+      <p>Average: {average}</p>
     </div>
   )
 }
