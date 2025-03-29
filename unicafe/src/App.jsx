@@ -1,31 +1,31 @@
 import { useState } from 'react'
 
-const Button = (props) => {
+const Button = ({ handle, text }) => {
   return (
     <>
-      <button onClick={props.handle}>{props.text}</button>
+      <button onClick={handle}>{text}</button>
     </>
   )
 }
 
-const StatisticLine = (props) => {
+const StatisticLine = ({ text, statistic, percent }) => {
   return (
-    <p>{props.text}: {props.statistic}{props.percent ? '%' : ''}</p>
+    <p>{text}: {statistic}{percent ? '%' : ''}</p>
   )
 }
 
-const Statistics = (props) => {
+const Statistics = ({ good, neutral, bad, all, average, positive }) => {
   return (
     <>
       <h2>Statistics</h2>
-      {props.all > 0 ?
+      {all > 0 ?
         <>
-          <StatisticLine text={'Good'} statistic={props.good} />
-          <StatisticLine text={'Neutral'} statistic={props.neutral} />
-          <StatisticLine text={'Bad'} statistic={props.bad} />
-          <StatisticLine text={'All'} statistic={props.all} />
-          <StatisticLine text={'Average'} statistic={props.average} />
-          <StatisticLine text={'Positive'} statistic={props.positive} percent={true} />
+          <StatisticLine text={'Good'} statistic={good} />
+          <StatisticLine text={'Neutral'} statistic={neutral} />
+          <StatisticLine text={'Bad'} statistic={bad} />
+          <StatisticLine text={'All'} statistic={all} />
+          <StatisticLine text={'Average'} statistic={average} />
+          <StatisticLine text={'Positive'} statistic={positive} percent={true} />
         </>
         :
         <p>No feedback given</p>
