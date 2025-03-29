@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const App = () => {
   const anecdotes = [
-    'Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. SO far, the Universe is winning.',
+    'Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.',
     'If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.',
     'I think it\'s a new feature. Don\'t tell anyone it was an accident.',
     'Theory is when you know something, but it doesn\'t work. Practice is when something works, but you don\'t know why. Programmers combine theory and practice: Nothing works and they don\'t know why.',
@@ -14,9 +14,17 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
 
+  const handleSelected = () => {
+    const newSelected = Math.floor(Math.random() * anecdotes.length)
+    setSelected(newSelected)
+  }
+
   return (
     <div>
       {anecdotes[selected]}
+      <div>
+        <button onClick={handleSelected}>next anecdote</button>
+      </div>
     </div>
   )
 }
